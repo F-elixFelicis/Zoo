@@ -1,18 +1,16 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
         Zoo zoo = new Zoo();
-        zoo.addAnimals("Bob", 4, "Male", zoo.dog);
-        zoo.addAnimals("Pippa", 9, "Male", zoo.bird);
-        zoo.addAnimals("Tom", 7, "Male", zoo.dog);
-        zoo.addAnimals("Felicia", 1, "Female", zoo.bird);
-        zoo.viewAnimals();
-        zoo.deleteAnimals("Tom");
-        zoo.viewAnimals();
+        zoo.addAnimal("Bob", 4, Gender.Male, TypeAnimal.Dog);
+        zoo.addAnimal("Pippa", 9, Gender.Male, TypeAnimal.Bird);
+        zoo.addAnimal("Tom", 7, Gender.Male, TypeAnimal.Dog);
+        zoo.addAnimal("Felicia", 1, Gender.Male, TypeAnimal.Bird);
+        zoo.viewAnimal();
+        zoo.deleteAnimal("Tom");
+        zoo.viewAnimal();
 
     }
 

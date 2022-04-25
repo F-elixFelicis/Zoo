@@ -1,15 +1,22 @@
 package com.company;
 
-public class Bird extends Animals {
+public class Bird extends Animal {
 
     private String wingspan;
     private String сountryOfBirth;
-    private final String typeAnimals = "Bird";
+    private String typeAnimal;
+    private String gender;
 
-    public String getTypeAnimals() {
-        return typeAnimals;
+    public Bird() {
     }
 
+    public Bird(String name, int age, String gender, String typeAnimal) {
+        setName(name);
+        setAge(age);
+        this.gender = gender;
+        this.typeAnimal = typeAnimal;
+        System.out.println("Added " + typeAnimal + " named " + getName() + " age " + getAge() + " it's a " + gender);
+    }
     public String getWingspan() {
         return wingspan;
     }
@@ -26,12 +33,13 @@ public class Bird extends Animals {
         this.сountryOfBirth = сountryOfBirth;
     }
 
-    public Bird() {
+    public String getGender() {
+        return gender;
     }
-    public Bird(String name, int age, String gender) {
-        setName(name);
-        setAge(age);
-        setGender((gender));
-        System.out.println("Added " + typeAnimals + " named " + getName() + " age " + getAge() + " it's a " + getGender());
+
+    public String getTypeAnimal() {
+        return typeAnimal;
     }
+
+
 }
