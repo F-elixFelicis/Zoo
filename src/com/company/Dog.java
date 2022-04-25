@@ -1,13 +1,21 @@
 package com.company;
 
-public class Dog extends Animals {
+public class Dog extends Animal {
 
     private String breed;
     private String color;
-    private final String typeAnimals = "Dog";
+    private String typeAnimal;
+    private String gender;
 
-    public String getTypeAnimals() {
-        return typeAnimals;
+    public Dog() {
+    }
+
+    public Dog(String name, int age, String gender, String typeAnimal) {
+        setName(name);
+        setAge(age);
+        this.gender = gender;
+        this.typeAnimal = typeAnimal;
+        System.out.println("Added " + typeAnimal + " named " + getName() + " age " + getAge() + " it's a " + gender);
     }
 
     public String getBreed() {
@@ -26,13 +34,13 @@ public class Dog extends Animals {
         this.color = color;
     }
 
-    public Dog() {
+    public String getGender() {
+        return gender;
     }
 
-    public Dog(String name, int age, String gender) {
-        setName(name);
-        setAge(age);
-        setGender((gender));
-        System.out.println("Added " + typeAnimals + " named " + getName() + " age " + getAge() + " it's a " + getGender());
+    public String getTypeAnimal() {
+        return typeAnimal;
     }
+
+
 }

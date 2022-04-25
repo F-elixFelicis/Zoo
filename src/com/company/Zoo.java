@@ -4,31 +4,29 @@ import java.util.ArrayList;
 
 public class Zoo {
 
-    public ArrayList<Animals> animals;
-    public Dog dog;
-    public Bird bird;
+    public ArrayList<Animal> animalArray;
 
     public Zoo() {
-        animals = new ArrayList<>();
+        animalArray = new ArrayList<>();
     }
 
-    public void addAnimals(String name, int age, String gender, Bird bird) {
-        animals.add(new Bird(name, age, gender));
+    public void addAnimal(String name, int age, Gender gender, TypeAnimal typeAnimal) {
+        switch (typeAnimal) {
+            case Dog -> animalArray.add(new Dog(name, age, gender.getTypeGender(), typeAnimal.getTypeAnimal()));
+            case Bird -> animalArray.add(new Bird(name, age, gender.getTypeGender(), typeAnimal.getTypeAnimal()));
+        }
     }
 
-    public void addAnimals(String name, int age, String gender, Dog dog) {
-        animals.add(new Dog(name, age, gender));
-
+    public void deleteAnimal(String name) {
+        animalArray.removeIf(e -> e.getName() == name);
+        System.out.println("Animal " + name + " deleted.");
     }
 
-    public void deleteAnimals(String name) {
-        animals.removeIf(e -> e.getName() == name);
-    }
-
-    public void viewAnimals() {
+    public void viewAnimal() {
         System.out.println("The zoo id made up of animals:");
-        for (var e : animals)
-            System.out.println("The " + e.getTypeAnimals() + "'s name is " + e.getName());
+
+        for (var e : animalArray)
+            System.out.println("The " + e.getTypeAnimal() + "'s name is " + e.getName());
         System.out.println();
     }
 }
